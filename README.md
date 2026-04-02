@@ -1,31 +1,5 @@
-# ot_normalizing_flow
+I tested whether OT-based couplings produce more efficient learned generative flows, and I quantified when minibatch OT helps or hurts.
 
-Plan: 
-
-Write-up
-
-1. Abstract
-
-2. Introduction
-- Theory background
-
-3. Model Design
-
-4. Experiment
-
-5. Discussion
-
-Need to do literature compilation
-
-
-
-Model: 
-
-Comment through code
-Update the scaffold to be more complete and have better implements
-Update README.md
-Schematize model
-Compile results, statistics
-Literature review
-Write down math for model
-Look over chapter 7, 8 to skim and understand what they are
+python generate_data.py --n_samples 20000 --out_dir data --stem toy_moons
+python train.py --data_path data/toy_moons.pt --save_dir runs/toy_moons_ot --coupling ot
+python train.py --data_path data/toy_moons.pt --save_dir runs/toy_moons_ind --coupling independent
